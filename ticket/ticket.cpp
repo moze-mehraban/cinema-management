@@ -55,7 +55,27 @@ void alltickets::writetofile() {
 	out.close();
 }
 void alltickets::readfromfile() {
+	int ID;
+	string Name;
+	ifstream inputFile;
+	inputFile.open("ticket.txt");
+	if (inputFile.is_open() == false) {
+		cout << "ticket is not open \n";
+	}
+	else
+	{
+		cout << "ticket is open \n";
+		while (inputFile.eof() == false) {
+			inputFile >> ID;
+			inputFile >>Name;
+			ticket t;
+			t.setname(Name);
+			t.set_id(ID);
+			addticket(t);
+		}
+	}
 
+	inputFile.close();
 }
 void main() {
 	alltickets all(50);
