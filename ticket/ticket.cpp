@@ -36,6 +36,7 @@ public:
 	void addticket(ticket);
 	void writetofile();
 	void readfromfile();
+	void print();
 };
 alltickets::alltickets(int cap) {
 	capacity = cap;
@@ -77,11 +78,13 @@ void alltickets::readfromfile() {
 	
 	inputFile.close();
 }
+void alltickets::print() {
+	for (int i = 0; i < counter; i++) {
+		cout << tickets[i].getid() << "\t" << tickets[i].getName() << endl;
+	}
+}
 void main() {
 	alltickets all(50);
-	ticket t1;
-	t1.setname("mamad");
-	t1.set_id(1);
-	all.addticket(t1);
-	all.writetofile();
+	all.readfromfile();
+	all.print();
 }
