@@ -35,7 +35,7 @@ public:
 	alltickets(int cap);
 	void addticket(ticket);
 	void writetofile();
-	
+	void readfromfile();
 };
 alltickets::alltickets(int cap) {
 	capacity = cap;
@@ -53,6 +53,9 @@ void alltickets::writetofile() {
 			<< endl;
 	}
 	out.close();
+}
+void alltickets::readfromfile() {
+
 }
 void main() {
 	alltickets all(50);
