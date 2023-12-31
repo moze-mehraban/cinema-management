@@ -74,7 +74,7 @@ void alltickets::readfromfile() {
 			addticket(t);
 		}
 	}
-
+	
 	inputFile.close();
 }
 void main() {
