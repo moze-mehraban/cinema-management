@@ -50,8 +50,10 @@ void alltickets::writetofile() {
 	ofstream out;
 	out.open("ticket.txt");
 	for (int i = 0; i < counter; i++) {
-		out << tickets[i].getid() << "\t" << tickets[i].getName()
-			<< endl;
+		out << tickets[i].getid() << "\t" << tickets[i].getName();
+		if (i < (counter - 1)) {
+			out << "\n";
+		}
 	}
 	out.close();
 }
@@ -83,7 +85,7 @@ void alltickets::print() {
 		cout << tickets[i].getid() << "\t" << tickets[i].getName() << endl;
 	}
 }
-void main() {
+int main() {
 	alltickets all(50);
 	all.readfromfile();
 	all.print();
