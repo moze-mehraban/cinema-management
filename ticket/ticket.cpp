@@ -86,10 +86,10 @@ void alltickets::print() {
 void main() {
 	alltickets all(50);
 	all.readfromfile();
-	ticket t2;
-	t2.setname("goraz");
-	t2.set_id(4);
-	all.addticket(t2);
+	//ticket t2;
+	//t2.setname("goraz");
+	//t2.set_id(4);
+	//all.addticket(t2);
 
 	all.print();
 	all.writetofile();
