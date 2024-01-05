@@ -13,7 +13,7 @@ public:
 	int getid();
 	string getName();
 	int resereved_chairs[5];
-	int getfilmid():
+	int getfilmid();
 };
 ticket::ticket(){
 	for (int i = 0; i < 5; i++) {
