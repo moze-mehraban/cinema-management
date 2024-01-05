@@ -5,6 +5,8 @@ class ticket {
 private:
 	string name;
 	int ticket_id;
+	int film_id;
+	int resereved_chairs[5];
 public:
 	ticket();
 	void set_id(int );
@@ -12,8 +14,10 @@ public:
 	int getid();
 	string getName();
 };
-ticket::ticket() {
-
+ticket::ticket(){
+	for (int i = 0; i < 5; i++) {
+		resereved_chairs[i] = 0;
+	}
 }
 void ticket::set_id(int id) {
 	ticket_id = id;
