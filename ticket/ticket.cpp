@@ -16,11 +16,16 @@ public:
 	int resereved_chairs[5];
 	int getfilmid();
 	void reserve(int chairnumber);
+	void setfilmid(int);
+
 };
 ticket::ticket(){
 	for (int i = 0; i < 5; i++) {
 		resereved_chairs[i] = 0;
 	}
+}
+void ticket::setfilmid(int id) {
+	film_id = id;
 }
 void ticket::reserve(int chairnumber) {
 	resereved_chairs[chairscount] = chairnumber;
@@ -66,7 +71,10 @@ void alltickets::writetofile() {
 	for (int i = 0; i < counter; i++) {
 		out << tickets[i].getid() << "\t" << tickets[i].getName()<<"\t"<<tickets[i].getfilmid()<<"\t";
 		for (int j = 0; j < 5; j++) {
-			out << tickets[i].resereved_chairs[j] << "\t";
+			out << tickets[i].resereved_chairs[j];
+			if (j != 4) {
+				out << "\t";
+			}
 		}
 		if (i < (counter - 1)) {
 			out << "\n";
@@ -77,6 +85,7 @@ void alltickets::writetofile() {
 void alltickets::readfromfile() {
 	int ID;
 	string Name;
+	int film_id;
 	ifstream inputFile;
 	inputFile.open("ticket.txt");
 	if (inputFile.is_open() == false) {
@@ -88,9 +97,18 @@ void alltickets::readfromfile() {
 		while (inputFile.eof() == false) {
 			inputFile >> ID;
 			inputFile >>Name;
+			inputFile >> film_id;
+			int temp;
 			ticket t;
 			t.setname(Name);
 			t.set_id(ID);
+			t.setfilmid(film_id);
+			for (int c = 0; c < 5; c++) {
+				inputFile >> temp;
+				if (temp != 0) {
+					t.reserve(temp);
+				}
+			}
 			addticket(t);
 		}
 	}
@@ -99,7 +117,13 @@ void alltickets::readfromfile() {
 }
 void alltickets::print() {
 	for (int i = 0; i < counter; i++) {
-		cout << tickets[i].getid() << "\t" << tickets[i].getName() << endl;
+		cout << tickets[i].getid() << "\t" << tickets[i].getName() << "\t" << tickets[i].getfilmid() << "\t";
+		for (int j = 0; j < 5; j++) {
+			cout << tickets[i].resereved_chairs[j] << "\t";
+		}
+		if (i < (counter - 1)) {
+			cout << "\n";
+		}
 	}
 }
 int main() {
