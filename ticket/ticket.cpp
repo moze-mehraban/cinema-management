@@ -6,6 +6,7 @@ private:
 	string name;
 	int ticket_id;
 	int film_id;
+	int chairscount=0;
 public:
 	ticket();
 	void set_id(int );
@@ -14,11 +15,16 @@ public:
 	string getName();
 	int resereved_chairs[5];
 	int getfilmid();
+	void reserve(int chairnumber);
 };
 ticket::ticket(){
 	for (int i = 0; i < 5; i++) {
 		resereved_chairs[i] = 0;
 	}
+}
+void ticket::reserve(int chairnumber) {
+	resereved_chairs[chairscount] = chairnumber;
+	chairscount++;
 }
 int ticket::getfilmid() {
 	return film_id;
