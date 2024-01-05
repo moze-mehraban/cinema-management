@@ -6,18 +6,22 @@ private:
 	string name;
 	int ticket_id;
 	int film_id;
-	int resereved_chairs[5];
 public:
 	ticket();
 	void set_id(int );
 	void setname(string);
 	int getid();
 	string getName();
+	int resereved_chairs[5];
+	int getfilmid():
 };
 ticket::ticket(){
 	for (int i = 0; i < 5; i++) {
 		resereved_chairs[i] = 0;
 	}
+}
+int ticket::getfilmid() {
+	return film_id;
 }
 void ticket::set_id(int id) {
 	ticket_id = id;
@@ -54,7 +58,10 @@ void alltickets::writetofile() {
 	ofstream out;
 	out.open("ticket.txt");
 	for (int i = 0; i < counter; i++) {
-		out << tickets[i].getid() << "\t" << tickets[i].getName();
+		out << tickets[i].getid() << "\t" << tickets[i].getName()<<"\t"<<tickets[i].getfilmid()<<"\t";
+		for (int j = 0; j < 5; j++) {
+			out << tickets[i].resereved_chairs[j] << "\t";
+		}
 		if (i < (counter - 1)) {
 			out << "\n";
 		}
