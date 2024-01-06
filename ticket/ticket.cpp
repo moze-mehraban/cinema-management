@@ -5,6 +5,7 @@ class Film {
 private:
 	int ID;
 	char name[30];
+	bool* chairs;
 public:
 	Film();
 	Film(int ID);
@@ -13,10 +14,12 @@ public:
 	char* getName();
 	int getID();
 	void Print();
+	void setchair();
 };
 char* Film::getName() {
 	return name;
 }
+
 int Film::getID() {
 	return ID;
 }
@@ -232,24 +235,24 @@ private:
 	string name;
 	int price;
 	int capacity;
-	bool *chairs;
+	Film time[7][4];
 public:
 	cinema();
 	void setname(string);
 	void setcap(int);
 	string getname();
 	int getcap();
-
+	void settime(Film, int, int);
 };
 cinema::cinema() {
-
+	
+}
+void cinema :: settime(Film x, int day, int sans) {
+	time[day][sans] = x;
+	x.setchairs(capacity);
 }
 void cinema::setcap(int cap) {
 	capacity = cap;
-	chairs = new bool[capacity];
-	for (int i = 0; i < capacity; i++) {
-		chairs[i] = false;
-	}
 }
 void cinema::setname(string name) {
 	this->name = name;
