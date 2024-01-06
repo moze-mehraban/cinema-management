@@ -266,7 +266,10 @@ string cinema::getname() {
 	return name;
 }
 int main() {
+	AllFilms aaaa(20);
 	alltickets all(50);
+	aaaa.ReadFromFile();
+	aaaa.Print();
 	all.readfromfile();
 	all.print();
 	all.writetofile();
