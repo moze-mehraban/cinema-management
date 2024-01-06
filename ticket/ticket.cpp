@@ -14,12 +14,14 @@ public:
 	char* getName();
 	int getID();
 	void Print();
-	void setchair();
+	void setchairs(int);
 };
 char* Film::getName() {
 	return name;
 }
+void Film::setchairs(int cap) {
 
+}
 int Film::getID() {
 	return ID;
 }
@@ -249,7 +251,7 @@ cinema::cinema() {
 }
 void cinema :: settime(Film x, int day, int sans) {
 	time[day][sans] = x;
-	x.setchairs(capacity);
+	time[day][sans].setchairs(capacity);
 }
 void cinema::setcap(int cap) {
 	capacity = cap;
