@@ -131,6 +131,7 @@ private:
 	string name;
 	int price;
 	int capacity;
+	bool *chairs;
 public:
 	cinema();
 	void setname(string);
@@ -141,6 +142,13 @@ public:
 };
 cinema::cinema() {
 
+}
+void cinema::setcap(int cap) {
+	capacity = cap;
+	chairs = new bool[capacity];
+	for (int i = 0; i < capacity; i++) {
+		chairs[i] = false;
+	}
 }
 int main() {
 	alltickets all(50);
