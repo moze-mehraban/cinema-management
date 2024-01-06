@@ -142,7 +142,6 @@ public:
 cinema::cinema() {
 
 }
-};
 int main() {
 	alltickets all(50);
 	all.readfromfile();
