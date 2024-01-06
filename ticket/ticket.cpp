@@ -150,6 +150,15 @@ void cinema::setcap(int cap) {
 		chairs[i] = false;
 	}
 }
+void cinema::setname(string name) {
+	this->name = name;
+}
+int cinema::getcap() {
+	return capacity;
+}
+string cinema::getname() {
+	return name;
+}
 int main() {
 	alltickets all(50);
 	all.readfromfile();
