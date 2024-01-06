@@ -129,14 +129,19 @@ void alltickets::print() {
 class cinema {
 private:
 	string name;
-	int cinema_id;
+	int price;
+	int capacity;
 public:
 	cinema();
 	void setname(string);
-	void setid(int);
+	void setcap(int);
 	string getname();
+	int getcap();
 
+};
+cinema::cinema() {
 
+}
 };
 int main() {
 	alltickets all(50);
