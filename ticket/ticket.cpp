@@ -126,6 +126,18 @@ void alltickets::print() {
 		}
 	}
 }
+class cinema {
+private:
+	string name;
+	int cinema_id;
+public:
+	cinema();
+	void setname(string);
+	void setid(int);
+	string getname();
+
+
+};
 int main() {
 	alltickets all(50);
 	all.readfromfile();
