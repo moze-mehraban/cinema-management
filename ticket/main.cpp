@@ -229,4 +229,5 @@ int main() {
 	all.readfromfile();
 	all.print();
 	all.writetofile();
+	all.print();
 }
