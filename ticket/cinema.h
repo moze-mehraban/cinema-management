@@ -17,4 +17,5 @@ public:
 	string getname();
 	int getcap();
 	void settime(Film, int, int);
+	void reserve(ticket);
 };

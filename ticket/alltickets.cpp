@@ -69,3 +69,8 @@ void alltickets::print() {
 		}
 	}
 }
+
+ticket alltickets::getticket(int index)
+{
+	return tickets[index];
+}

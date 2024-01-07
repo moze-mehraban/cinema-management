@@ -52,4 +52,5 @@ void Film::printchairs()
 			cout << i + 1 << " ";
 		}
 	}
+	cout << "\n";
 }

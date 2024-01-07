@@ -10,4 +10,5 @@ public:
 	void writetofile();
 	void readfromfile();
 	void print();
+	ticket getticket(int);
 };

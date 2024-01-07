@@ -5,7 +5,7 @@
 #include "Film2.h"
 #include "cinema.h"
 #include "allfilms.h"
-
+#include "IdGenerator.h"
 using namespace std;
 
 int main() {
@@ -15,13 +15,20 @@ int main() {
 	cinema c;
 	ticket t;
 	Film f;
+	IdGenerator Id;
+	c.setcap(20);
+	c.setname("nigga");
 	f.setID(1);
 	f.setName(name);
-	f.setchairs(20);
 	t.setfilmid(1);
 	t.setname("boooo");
-	t.set_id(1);
+	t.set_id(Id.GetTId());
+	all.addticket(t);
+	c.settime(f, 1, 2);
 	t.reserve(10);
-	f.reserve(t);
-	f.printchairs();
+	t.reserve(11);
+	c.reserve(t);
+	all.print();
+	all.writetofile();
+
 }

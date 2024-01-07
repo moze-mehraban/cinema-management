@@ -53,5 +53,8 @@
     <ClInclude Include="allfilms.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="IdGenerator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
