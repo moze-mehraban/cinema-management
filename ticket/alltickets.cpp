@@ -1,5 +1,5 @@
 #include"alltickets.h"
-
+#include <fstream>
 alltickets::alltickets(int cap) {
 	capacity = cap;
 	tickets = new ticket[cap];

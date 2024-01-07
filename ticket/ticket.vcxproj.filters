@@ -24,6 +24,15 @@
     <ClCompile Include="alltickets.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Film2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cinema.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="allfilms.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
@@ -33,6 +42,15 @@
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="alltickets.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Film2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cinema.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="allfilms.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

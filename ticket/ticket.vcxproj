@@ -128,7 +128,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="allfilms.cpp" />
     <ClCompile Include="alltickets.cpp" />
+    <ClCompile Include="cinema.cpp" />
+    <ClCompile Include="Film2.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="ticket.cpp" />
   </ItemGroup>
@@ -136,7 +139,10 @@
     <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="allfilms.h" />
     <ClInclude Include="alltickets.h" />
+    <ClInclude Include="cinema.h" />
+    <ClInclude Include="Film2.h" />
     <ClInclude Include="ticket.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
