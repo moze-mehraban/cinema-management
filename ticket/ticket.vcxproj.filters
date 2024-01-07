@@ -21,6 +21,9 @@
     <ClCompile Include="ticket.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="alltickets.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
@@ -28,6 +31,9 @@
   <ItemGroup>
     <ClInclude Include="ticket.h">
       <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="alltickets.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

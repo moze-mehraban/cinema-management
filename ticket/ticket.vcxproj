@@ -128,6 +128,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="alltickets.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="ticket.cpp" />
   </ItemGroup>
@@ -135,6 +136,7 @@
     <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="alltickets.h" />
     <ClInclude Include="ticket.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
