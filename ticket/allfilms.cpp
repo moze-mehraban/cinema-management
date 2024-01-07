@@ -17,6 +17,14 @@ void AllFilms::Print() {
 		films[i].Print();
 	}
 }
+Film AllFilms::getfilm(int id)
+{
+	for (int i = 0; i < numFilm; i++) {
+		if (films[i].getID() == id) {
+			return films[i];
+		}
+	}
+}
 AllFilms::AllFilms(int capacity) {
 	this->Capacity = capacity;
 	numFilm = 0;

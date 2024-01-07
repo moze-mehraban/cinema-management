@@ -12,4 +12,5 @@ public:
 	void ReadFromFile();
 	void WriteToFile();
 	void Print();
+	Film getfilm(int id);
 };
