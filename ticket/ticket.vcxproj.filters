@@ -21,16 +21,10 @@
     <ClCompile Include="ticket.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="alltickets.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Film2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="cinema.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="allfilms.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="jacinemaii.cpp">
@@ -44,16 +38,10 @@
     <ClInclude Include="ticket.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="alltickets.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Film2.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="cinema.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="allfilms.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="IdGenerator.h">

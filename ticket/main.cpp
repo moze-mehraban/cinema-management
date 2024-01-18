@@ -1,10 +1,10 @@
 #include <iostream>
 #include <fstream>
 #include "ticket.h"
-#include"alltickets.h"
+
 #include "Film2.h"
 #include "cinema.h"
-#include "allfilms.h"
+
 #include "IdGenerator.h"
 #include "jacinemaii.h"
 using namespace std;

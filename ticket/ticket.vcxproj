@@ -128,8 +128,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="allfilms.cpp" />
-    <ClCompile Include="alltickets.cpp" />
     <ClCompile Include="cinema.cpp" />
     <ClCompile Include="Film2.cpp" />
     <ClCompile Include="jacinemaii.cpp" />
@@ -140,8 +138,6 @@
     <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="allfilms.h" />
-    <ClInclude Include="alltickets.h" />
     <ClInclude Include="cinema.h" />
     <ClInclude Include="Film2.h" />
     <ClInclude Include="IdGenerator.h" />
