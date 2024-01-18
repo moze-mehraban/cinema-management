@@ -132,6 +132,7 @@
     <ClCompile Include="alltickets.cpp" />
     <ClCompile Include="cinema.cpp" />
     <ClCompile Include="Film2.cpp" />
+    <ClCompile Include="jacinemaii.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="ticket.cpp" />
   </ItemGroup>
@@ -144,6 +145,7 @@
     <ClInclude Include="cinema.h" />
     <ClInclude Include="Film2.h" />
     <ClInclude Include="IdGenerator.h" />
+    <ClInclude Include="jacinemaii.h" />
     <ClInclude Include="ticket.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -20,6 +20,10 @@ void cinema::reserve(ticket t)
 		}
 	}
 }
+Film cinema::getfilm(int i, int j)
+{
+	return time[i][j];
+}
 void cinema::setcap(int cap) {
 	capacity = cap;
 }

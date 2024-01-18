@@ -33,6 +33,9 @@
     <ClCompile Include="allfilms.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="jacinemaii.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
@@ -54,6 +57,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="IdGenerator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="jacinemaii.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

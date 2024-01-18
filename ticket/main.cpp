@@ -6,6 +6,7 @@
 #include "cinema.h"
 #include "allfilms.h"
 #include "IdGenerator.h"
+#include "jacinemaii.h"
 using namespace std;
 
 int main() {
