@@ -6,6 +6,7 @@ private:
 	string name;
 	int ticket_id;
 	int film_id;
+	int cinema_id;
 	int chairscount = 0;
 public:
 	ticket();
@@ -16,6 +17,8 @@ public:
 	int resereved_chairs[5];
 	int getfilmid();
 	void reserve(int chairnumber);
-	void setfilmid(int);
+	void setfilmid(int id);
+	void setcinemaid(int c);
+	int getcinemaid();
 
 };

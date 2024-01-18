@@ -12,7 +12,7 @@ void alltickets::writetofile() {
 	ofstream out;
 	out.open("ticket.txt");
 	for (int i = 0; i < counter; i++) {
-		out << tickets[i].getid() << "\t" << tickets[i].getName() << "\t" << tickets[i].getfilmid() << "\t";
+		out << tickets[i].getid() << "\t" << tickets[i].getName() << "\t" <<tickets[i].getcinemaid()<<"\t" << tickets[i].getfilmid() << "\t";
 		for (int j = 0; j < 5; j++) {
 			out << tickets[i].resereved_chairs[j];
 			if (j != 4) {

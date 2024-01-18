@@ -23,10 +23,11 @@ int main() {
 	t.setfilmid(1);
 	t.setname("boooo");
 	t.set_id(Id.GetTId());
+	t.setcinemaid(1);
+	t.reserve(11);
+	t.reserve(10);
 	all.addticket(t);
 	c.settime(f, 1, 2);
-	t.reserve(10);
-	t.reserve(11);
 	c.reserve(t);
 	all.print();
 	all.writetofile();

@@ -7,6 +7,14 @@ ticket::ticket() {
 void ticket::setfilmid(int id) {
 	film_id = id;
 }
+void ticket::setcinemaid(int c)
+{
+	cinema_id = c;
+}
+int ticket::getcinemaid()
+{
+	return cinema_id;
+}
 void ticket::reserve(int chairnumber) {
 	resereved_chairs[chairscount] = chairnumber;
 	chairscount++;

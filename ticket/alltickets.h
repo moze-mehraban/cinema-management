@@ -6,7 +6,7 @@ private:
 	ticket* tickets;
 public:
 	alltickets(int cap);
-	void addticket(ticket);
+	void addticket( ticket nex);
 	void writetofile();
 	void readfromfile();
 	void print();
