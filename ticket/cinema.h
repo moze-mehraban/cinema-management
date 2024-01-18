@@ -21,5 +21,5 @@ public:
 	void reserve(ticket);
 	void setid(int i) { id = i; }
 	int getid() { return id; }
-	Film getfilm(int, int);
+	Film &getfilm(int, int);
 };

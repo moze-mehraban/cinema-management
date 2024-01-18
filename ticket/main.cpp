@@ -10,17 +10,17 @@
 using namespace std;
 
 int main() {
-	AllFilms aaaa(20);
+	/*AllFilms aaaa(20);
 	alltickets all(50);
-	char name[7] = { 'd', 'a', ' l', 'g', ' h', 'a', 'k' };
 	cinema c;
 	ticket t;
 	Film f;
 	IdGenerator Id;
 	c.setcap(20);
 	c.setname("nigga");
+	c.setid(Id.GetCId());
 	f.setID(1);
-	f.setName(name);
+	f.setName("dalghak");
 	t.setfilmid(1);
 	t.setname("boooo");
 	t.set_id(Id.GetTId());
@@ -30,7 +30,12 @@ int main() {
 	all.addticket(t);
 	c.settime(f, 1, 2);
 	c.reserve(t);
+	j.addcinema(c);
+	j.write();
 	all.print();
 	all.writetofile();
-
+	cout<<f.getName();*/
+	
+	jacinemaii j;
+	j.read();
 }

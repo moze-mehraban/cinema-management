@@ -20,7 +20,7 @@ void cinema::reserve(ticket t)
 		}
 	}
 }
-Film cinema::getfilm(int i, int j)
+Film &cinema::getfilm(int i, int j)
 {
 	return time[i][j];
 }

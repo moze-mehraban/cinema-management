@@ -2,8 +2,8 @@
 #include "ticket.h"
 class Film {
 private:
-	int ID;
-	char name[30];
+	int ID=-1;
+	string name;
 	bool* chairs;
 	int cap;
 	ticket *reserved;
@@ -11,14 +11,16 @@ private:
 public:
 	Film();
 	Film(int ID);
-	void setName(char[]);
+	void setName(string n) { name = n; }
 	void setID(int);
-	char* getName();
+	string getName() { return name; }
 	int getID();
 	void Print();
 	void setchairs(int);
 	int getcap() { return cap; }
 	void reserve(ticket ticket);
 	void printchairs();
+	int gettc() { return tc; }
+	ticket gettickets(int tn) { return reserved[tn]; }
 };
 
