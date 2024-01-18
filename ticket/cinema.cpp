@@ -24,6 +24,19 @@ Film &cinema::getfilm(int i, int j)
 {
 	return time[i][j];
 }
+void cinema::schedule()
+{
+	int timetable[4] = { 9,11,15,17 };
+	for (int i = 0; i < 7; i++) {
+		cout << "day: " << i<<"\t";
+		for (int j = 0; j < 4; j++) {
+			if (time[i][j].getID()!=-1) {
+				cout << timetable[j] << ":00 " << time[i][j].getName() << " : " << time[i][j].freecounter() << "\t";
+			}
+		}
+		cout << endl;
+	}
+}
 void cinema::setcap(int cap) {
 	capacity = cap;
 }

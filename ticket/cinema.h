@@ -22,4 +22,8 @@ public:
 	void setid(int i) { id = i; }
 	int getid() { return id; }
 	Film &getfilm(int, int);
+	void setprice(int p) { price = p; }
+	int getprice() { return price; }
+	void movie_killer(int day, int sans) { time[day][sans] = Film() ; }
+	void schedule();
 };

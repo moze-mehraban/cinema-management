@@ -10,7 +10,7 @@ void jacinemaii::write()
 	ofstream out("cinema.txt");
 
 	for (cinema c : allcinema) {
-		out<<'c'<<"\t" << c.getid() << "\t" << c.getname() << "\t" << c.getcap() << endl;
+		out<<'c'<<"\t" << c.getid() << "\t" << c.getname() << "\t" << c.getcap()<<"\t" << c.getprice() << endl;
 		for (int i = 0; i < 7; i++) {
 			for (int j = 0; j < 4; j++) {
 				Film f = c.getfilm(i, j);
@@ -42,15 +42,17 @@ void jacinemaii::read()
 		char type;
 		inp >> type;
 		if (type == 'c') {
-			int id,cap;
+			int id,cap,price;
 			string name;
 			inp >> id;
 			inp >> name;
 			inp >> cap;
+			inp >> price;
 			cinema c;
 			c.setid(id);
 			c.setcap(cap);
 			c.setname(name);
+			c.setprice(price);
 			addcinema(c);
 			activec++;
 
@@ -91,4 +93,52 @@ void jacinemaii::read()
 
 	}
 	inp.close();
+}
+
+void jacinemaii::ticket_killer(int tid)
+{
+	for (cinema &c : allcinema) {
+		for (int i = 0; i < 7; i++) {
+			for (int j = 0; j < 4; j++) {
+				for (int k = 0; k < c.getfilm(i, j).gettc(); k++) {
+					if (c.getfilm(i, j).gettickets(k).getid() == tid) {
+						c.getfilm(i, j).ticket_killer(k);
+					}
+				}
+			}
+		}
+	}
+}
+
+void jacinemaii::cinema_killer(int cid)
+{
+	int index = 0;
+	for (cinema &c : allcinema) {
+		if (c.getid() == cid) {
+			allcinema.erase(allcinema.begin() + index);
+		}
+		index++;
+	}
+}
+
+void jacinemaii::movie_killer(string name)
+{
+	for ( cinema &c : allcinema) {
+		for (int i = 0; i < 7; i++) {
+			for (int j = 0; j < 4; j++) {
+				if (c.getfilm(i, j).getName() == name) {
+					c.movie_killer(i, j);
+				}
+			}
+		}
+	}
+}
+
+void jacinemaii::cinema_schedule(int cid)
+{
+	for (cinema& c : allcinema) {
+		if (c.getid() == cid) {
+			c.schedule();
+		}
+	}
 }

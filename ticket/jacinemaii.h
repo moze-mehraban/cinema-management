@@ -12,6 +12,9 @@ public:
 	void addcinema(const cinema &next);
 	void write();
 	void read();
-
+	void ticket_killer(int tid);
+	void cinema_killer(int cid);
+	void movie_killer(string name);
+	void cinema_schedule(int cid);
 };
 

@@ -4,7 +4,6 @@ using namespace std;
 void Film::setchairs(int cap) {
 	this->cap = cap;
 	chairs = new bool[cap];
-	reserved = new ticket[cap];
 	for (int i = 0; i < cap; i++) {
 		chairs[i] = false;
 	}
@@ -25,7 +24,7 @@ Film::Film(int ID) {
 	this->ID = ID;
 }
 void Film::reserve(ticket ticket) {
-	reserved[tc] = ticket;
+	reserved.push_back(ticket);
 	for (int i = 0; i < 5; i++) {
 		if (ticket.resereved_chairs[i] != 0) {
 			if (chairs[ticket.resereved_chairs[i] - 1] != true) {
@@ -44,4 +43,22 @@ void Film::printchairs()
 		}
 	}
 	cout << "\n";
+}
+
+void Film::ticket_killer(int ti)
+{
+	for (int i = 0; i < 5; i++) {
+		chairs[reserved[ti].resereved_chairs[i] - 1] = false;
+	}
+	reserved.erase(reserved.begin() + ti);
+	tc--;
+}
+
+int Film::freecounter()
+{
+	int c=0;
+	for (int i = 0; i < cap; i++) {
+		if (chairs[i] == false) { c++; }
+	}
+	return c;
 }

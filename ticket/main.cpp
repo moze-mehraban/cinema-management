@@ -38,4 +38,6 @@ int main() {
 	
 	jacinemaii j;
 	j.read();
+	j.cinema_schedule(1);
+	j.write();
 }
