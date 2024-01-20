@@ -24,15 +24,17 @@ Film::Film(int ID) {
 	this->ID = ID;
 }
 void Film::reserve(ticket ticket) {
-	reserved.push_back(ticket);
-	for (int i = 0; i < 5; i++) {
-		if (ticket.resereved_chairs[i] != 0) {
-			if (chairs[ticket.resereved_chairs[i] - 1] != true) {
-				chairs[ticket.resereved_chairs[i] - 1] = true;
+	if(ticket.getchaircounter()<=freecounter()){
+		reserved.push_back(ticket);
+		for (int i = 0; i < 5; i++) {
+			if (ticket.resereved_chairs[i] != 0) {
+				if (chairs[ticket.resereved_chairs[i] - 1] != true) {
+					chairs[ticket.resereved_chairs[i] - 1] = true;
+				}
 			}
 		}
+		tc++;
 	}
-	tc++;
 }
 
 void Film::printchairs()

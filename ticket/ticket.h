@@ -20,6 +20,7 @@ public:
 	void reserve(int chairnumber);
 	void setfilmid(int id);
 	void setcinemaid(int c);
-	int getcinemaid();
+	int getcinemaid();	
+	int getchaircounter() { return chairscount; }
 
 };

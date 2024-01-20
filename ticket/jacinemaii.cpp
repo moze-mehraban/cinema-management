@@ -90,7 +90,9 @@ void jacinemaii::read()
 			}
 			allcinema[activec].getfilm(activefd, activefs).reserve(t);
 		}
+		else {
 
+		}
 	}
 	inp.close();
 }
@@ -139,6 +141,31 @@ void jacinemaii::cinema_schedule(int cid)
 	for (cinema& c : allcinema) {
 		if (c.getid() == cid) {
 			c.schedule();
+		}
+	}
+}
+
+void jacinemaii::ticket_finder(int tid)
+{
+	string days[7] = { "shanbe","yek shanbe","doshanbe","seshanbe","chahar shanbe","panj shanbe","jomee" };
+	string times[4] = { "09:00" ,"11:00","15:00","17:00" };
+	for (cinema c : allcinema) {
+		for (int i = 0; i < 7; i++) {
+			for (int j = 0; j < 4; j++) {
+				for (int k = 0; k < c.getfilm(i, j).gettc(); k++) {
+					if (c.getfilm(i, j).gettickets(k).getid() == tid) {
+						cout <<"cinema : " << c.getname() << "\t" << "day : " << days[i] << "\t" << "start time : " 
+							<<times[j]<< "\t" << "filme :" << c.getfilm(i, j).getName() << endl;
+						cout << "chairs : ";
+						for (int l=0 ;l<5;l++){
+							if (c.getfilm(i, j).gettickets(k).resereved_chairs[l]!=0){
+								cout << c.getfilm(i, j).gettickets(k).resereved_chairs[l]<<" ";
+							}
+						}
+						cout << endl;
+					}
+				}
+			}
 		}
 	}
 }

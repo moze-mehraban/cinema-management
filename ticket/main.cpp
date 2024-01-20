@@ -38,6 +38,6 @@ int main() {
 	
 	jacinemaii j;
 	j.read();
-	j.cinema_schedule(1);
+	j.ticket_finder(15);
 	j.write();
 }
