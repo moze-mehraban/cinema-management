@@ -4,7 +4,7 @@
 
 #include "Film2.h"
 #include "cinema.h"
-
+#include"ui.h";
 #include "IdGenerator.h"
 #include "jacinemaii.h"
 using namespace std;
@@ -36,8 +36,5 @@ int main() {
 	all.writetofile();
 	cout<<f.getName();*/
 	
-	jacinemaii j;
-	j.read();
-	j.ticket_finder(15);
-	j.write();
+	ui u;
 }

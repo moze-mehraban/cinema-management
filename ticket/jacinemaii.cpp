@@ -209,3 +209,38 @@ void jacinemaii::reserve(ticket t)
 		
 	}
 }
+
+void jacinemaii::printall()
+{
+	for (cinema c : allcinema) {
+		cout << c.getid() << " " << c.getname()<<endl;
+	}
+}
+
+void jacinemaii::allFilm()
+{
+	vector<string> all;
+	for (cinema c : allcinema) {
+		for (int i = 0; i < 7; i++) {
+			for (int j = 0; j < 4; j++) {
+				string name = c.getfilm(i, j).getName();
+				bool prem = true;
+				for (string s : all) {
+					if (name == s) {
+						prem = false;
+					}
+				}
+				if (prem) {
+					all.push_back(name);
+				}
+			}
+		}
+	}
+	int c = 1;
+	for (string s : all) {
+		if (s != "")
+		{
+			cout << c++ << " : " << s << endl;
+		}
+	}
+}

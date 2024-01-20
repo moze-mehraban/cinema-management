@@ -133,6 +133,7 @@
     <ClCompile Include="jacinemaii.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="ticket.cpp" />
+    <ClCompile Include="ui.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
@@ -143,6 +144,7 @@
     <ClInclude Include="IdGenerator.h" />
     <ClInclude Include="jacinemaii.h" />
     <ClInclude Include="ticket.h" />
+    <ClInclude Include="ui.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

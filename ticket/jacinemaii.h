@@ -18,5 +18,7 @@ public:
 	void cinema_schedule(int cid);
 	void ticket_finder(int tid);
 	void reserve(ticket t);
+	void printall();
+	void allFilm();
 };
 
