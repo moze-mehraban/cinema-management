@@ -58,7 +58,7 @@ void Film::printfreechairs()
 
 bool Film::freecheck(int chair_number)
 {
-	return !chairs[chair_number];
+	return !chairs[chair_number-1];
 }
 
 void Film::ticket_killer(int ti)
