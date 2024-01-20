@@ -30,8 +30,12 @@ void cinema::schedule()
 	for (int i = 0; i < 7; i++) {
 		cout << "day: " << i<<"\t";
 		for (int j = 0; j < 4; j++) {
+			cout << timetable[j] << ":00 ";
 			if (time[i][j].getID()!=-1) {
-				cout << timetable[j] << ":00 " << time[i][j].getName() << " : " << time[i][j].freecounter() << "\t";
+				cout << time[i][j].getName() << " : " << time[i][j].freecounter() << "\t\t";
+			}
+			else {
+				cout << "\t\t";
 			}
 		}
 		cout << endl;

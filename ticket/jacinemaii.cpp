@@ -177,7 +177,7 @@ void jacinemaii::reserve(ticket t)
 	int cid=t.getcinemaid(), fid=t.getfilmid();
 	string name = t.getName();
 	int day=-1, sans=-1;
-	for (cinema c : allcinema) {
+	for (cinema &c : allcinema) {
 		if (c.getid() == cid) {
 			for (int i = 0; i < 7; i++) {
 				for (int j = 0; j < 4; j++) {
@@ -190,7 +190,7 @@ void jacinemaii::reserve(ticket t)
 			}
 		}
 	}
-	for (cinema c : allcinema) {
+	for (cinema &c : allcinema) {
 		for (int i = 0; i < c.getfilm(day, sans).gettc(); i++) {
 			if (c.getfilm(day, sans).gettickets(i).getName() == name&&cid!=c.getid()) {
 				premission = false;
@@ -200,20 +200,25 @@ void jacinemaii::reserve(ticket t)
 
 	}
 	if (premission) {
-		for (cinema c : allcinema) {
+		for (cinema &c : allcinema) {
 			if (c.getid() == cid) {
 				c.getfilm(day, sans).reserve(t);
+				cout << "reservation compelete <3\n";
+				cout << "your ticket id :" << t.getid() << endl;
 				break;
 			}
 		}
 		
+	}
+	else {
+		cout << "reservation impossible  :(\n";
 	}
 }
 
 void jacinemaii::printall()
 {
 	for (cinema c : allcinema) {
-		cout << c.getid() << " " << c.getname()<<endl;
+		cout << c.getid() << " : " << c.getname()<<endl;
 	}
 }
 
@@ -241,6 +246,15 @@ void jacinemaii::allFilm()
 		if (s != "")
 		{
 			cout << c++ << " : " << s << endl;
+		}
+	}
+}
+
+cinema& jacinemaii::getcinema(int cid)
+{
+	for (cinema& c : allcinema) {
+		if (c.getid() == cid) {
+			return c;
 		}
 	}
 }

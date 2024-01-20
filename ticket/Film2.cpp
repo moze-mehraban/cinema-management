@@ -46,6 +46,20 @@ void Film::printchairs()
 	}
 	cout << "\n";
 }
+void Film::printfreechairs()
+{
+	for (int i = 0; i < cap; i++) {
+		if (chairs[i] == false) {
+			cout << i + 1 << " ";
+		}
+	}
+	cout << "\n";
+}
+
+bool Film::freecheck(int chair_number)
+{
+	return !chairs[chair_number];
+}
 
 void Film::ticket_killer(int ti)
 {

@@ -20,5 +20,6 @@ public:
 	void reserve(ticket t);
 	void printall();
 	void allFilm();
+	cinema& getcinema(int cid);
 };
 

@@ -26,5 +26,7 @@ public:
 	ticket gettickets(int tn) { return reserved[tn]; }
 	void ticket_killer(int);
 	int freecounter();
+	void printfreechairs();
+	bool freecheck(int);
 };
 
