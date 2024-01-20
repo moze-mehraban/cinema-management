@@ -17,5 +17,6 @@ public:
 	void movie_killer(string name);
 	void cinema_schedule(int cid);
 	void ticket_finder(int tid);
+	void reserve(ticket t);
 };
 

@@ -28,6 +28,7 @@ void jacinemaii::write()
 			}
 		}
 	}
+	out << 's';
 	out.close();
 }
 
@@ -42,7 +43,7 @@ void jacinemaii::read()
 		char type;
 		inp >> type;
 		if (type == 'c') {
-			int id,cap,price;
+			int id, cap, price;
 			string name;
 			inp >> id;
 			inp >> name;
@@ -70,7 +71,7 @@ void jacinemaii::read()
 			activefd = day;
 			activefs = sans;
 
-			
+
 		}
 		else if (type == 't') {
 			int id, cid, fid, chair;
@@ -90,8 +91,8 @@ void jacinemaii::read()
 			}
 			allcinema[activec].getfilm(activefd, activefs).reserve(t);
 		}
-		else {
-
+		else if (type == 's') {
+			break;
 		}
 	}
 	inp.close();
@@ -167,5 +168,44 @@ void jacinemaii::ticket_finder(int tid)
 				}
 			}
 		}
+	}
+}
+
+void jacinemaii::reserve(ticket t)
+{
+	bool premission = true;
+	int cid=t.getcinemaid(), fid=t.getfilmid();
+	string name = t.getName();
+	int day=-1, sans=-1;
+	for (cinema c : allcinema) {
+		if (c.getid() == cid) {
+			for (int i = 0; i < 7; i++) {
+				for (int j = 0; j < 4; j++) {
+					if (c.getfilm(i, j).getID() == fid) {
+						day = i;
+						sans = j;
+					
+					}
+				}
+			}
+		}
+	}
+	for (cinema c : allcinema) {
+		for (int i = 0; i < c.getfilm(day, sans).gettc(); i++) {
+			if (c.getfilm(day, sans).gettickets(i).getName() == name&&cid!=c.getid()) {
+				premission = false;
+				break;
+			}
+		}
+
+	}
+	if (premission) {
+		for (cinema c : allcinema) {
+			if (c.getid() == cid) {
+				c.getfilm(day, sans).reserve(t);
+				break;
+			}
+		}
+		
 	}
 }
