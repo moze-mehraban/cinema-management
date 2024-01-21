@@ -1,1 +1,4 @@
+c	1	mamadoo	30	85
+f	1	dalghak	0	0
+t	1	1	1	1	1	2	3	0	0
 s

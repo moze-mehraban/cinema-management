@@ -88,7 +88,20 @@ void ui:: reservation()
 			cin >> chair;
 			if (j.getcinema(cid).getfilm(day, sans).freecheck(chair)) {
 				if (chair > 0 && chair <= j.getcinema(cid).getcap()) {
-					t.reserve(chair);
+					int prem = true;
+					for (int i = 0; i < 5; i++) {
+						if (t.resereved_chairs[i] == chair) {
+							prem = false;
+							
+						}
+					}
+					if (prem) {
+						t.reserve(chair);
+					}
+					else {
+						cout << "selected previously \n";
+						i--;
+					}
 				}
 				else {
 					cout << "out of range!!\n";
@@ -166,7 +179,7 @@ void ui::finder()
 	cout << "enter ticket id : ";
 	cin >> inp;
 	j.ticket_finder(inp);
-	cout << " enter sth : ";
+	cout << " enter a number to continue : ";
 	string inp2;
 	cin >> inp2;
 
