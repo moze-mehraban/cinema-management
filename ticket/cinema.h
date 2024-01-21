@@ -26,4 +26,6 @@ public:
 	int getprice() { return price; }
 	void movie_killer(int day, int sans) { time[day][sans] = Film() ; }
 	void schedule();
+	int income();
+	int film_income(string);
 };

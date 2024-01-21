@@ -258,3 +258,106 @@ cinema& jacinemaii::getcinema(int cid)
 		}
 	}
 }
+
+int jacinemaii::income(int cid)
+{
+	for (cinema c : allcinema) {
+		if (c.getid() == cid) {
+			return c.income();
+		}
+	}
+}
+
+int jacinemaii::film_income(string name)
+{
+	int income=0;
+	for (cinema c : allcinema) {
+		income+=c.film_income(name);
+	}
+	return income;
+}
+
+int jacinemaii::film_income(int cid, string name)
+{
+
+	for (cinema c : allcinema) {
+		if (c.getid() == cid) {
+			return c.film_income(name);
+		}
+	}
+	
+}
+
+int jacinemaii::most_seller()
+{
+	int msId=-1,income=0;
+
+	for (cinema c : allcinema) {
+		if (c.income() > income) {
+			msId = c.getid();
+			income = c.income();
+		}
+	}
+	return msId;
+}
+
+string jacinemaii::mostsellermovie()
+{
+	string msfname;
+	int income=0;
+	vector <string> allfilms;
+	for (cinema c : allcinema) {
+		for (int i = 0; i < 7; i++) {
+			for (int j = 0; j < 4; j++) {
+				if (c.getfilm(i,j).getID()!=-1 ){
+					string name = c.getfilm(i, j).getName();
+					bool prem = true;
+					for (string s : allfilms) {
+						if (name == s) {
+							prem = false;
+						}
+					}
+					if (prem) {
+						allfilms.push_back(name);
+					}
+				}
+			}
+		}
+	}
+	for (string s : allfilms) {
+		if (film_income(s) > income) {
+			msfname = s;
+		}
+	}
+	return msfname;
+}
+
+void jacinemaii::popular()
+{
+	int pday=0, psans=0;
+	int popularity[7][4];
+	for (int i = 0; i < 7; i++) {
+		for (int j = 0; j < 4; j++) {
+			int population=0;
+			for (cinema c : allcinema) {
+				population += (c.getfilm(i, j).getcap() - c.getfilm(i, j).freecounter());
+			}
+			popularity[i][j] = population;
+
+		}
+	}
+	int mostcount=0;
+	for (int i = 0; i < 7;i++) {
+		for (int j = 0; j < 4; j++) {
+			if (popularity[i][j] > mostcount) {
+				mostcount = popularity[i][j];
+				pday = i;
+				psans = j;
+			}
+		}
+
+	}
+	string days[7] = { "shanbe","yek shanbe","doshanbe","seshanbe","chahar shanbe","panj shanbe","jomee" };
+	string times[4] = { "09:00" ,"11:00","15:00","17:00" };
+	cout << "most popular time is " << days[pday] << "  " << times[psans]<<"\nwith total of : "<<mostcount<<endl;
+}

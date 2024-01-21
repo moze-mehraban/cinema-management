@@ -41,6 +41,30 @@ void cinema::schedule()
 		cout << endl;
 	}
 }
+int cinema::income()
+{
+	int income=0;
+	for (int i = 0; i < 7; i++) {
+		for (int j = 0; j < 4; j++) {
+			if (getfilm(i,j).getID()!=-1) {
+				income += (capacity - getfilm(i, j).freecounter()) * price;
+			}
+		}
+	}
+	return income;
+}
+int cinema::film_income(string name)
+{
+	int income = 0;
+	for (int i = 0; i < 7; i++) {
+		for (int j = 0; j < 4; j++) {
+			if (getfilm(i, j).getName()==name) {
+				income += (capacity - getfilm(i, j).freecounter()) * price;
+			}
+		}
+	}
+	return income;
+}
 void cinema::setcap(int cap) {
 	capacity = cap;
 }

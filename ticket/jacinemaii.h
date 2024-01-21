@@ -21,5 +21,11 @@ public:
 	void printall();
 	void allFilm();
 	cinema& getcinema(int cid);
+	int income(int cid);
+	int film_income(string);
+	int film_income(int , string);
+	int most_seller();
+	string mostsellermovie();
+	void popular();
 };
 

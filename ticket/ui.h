@@ -14,4 +14,6 @@ public:
 	void killer();
 	void finder();
 	void registeration();
+	void leaderboard();
+
 };

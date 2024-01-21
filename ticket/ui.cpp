@@ -15,8 +15,9 @@ void ui:: menu() {
 		cout << "2 : finder " << endl;
 		cout << "3 : killer " << endl;
 		cout << "4 : registeration" << endl;
-		cout << "5 : save :D " << endl;
-		cout << "6 : exit " << endl;
+		cout << "5 : leaderboard " << endl;
+		cout << "6 : save :D " << endl;
+		cout << "7 : exit " << endl;
 
 
 		cin >> inp;
@@ -33,9 +34,12 @@ void ui:: menu() {
 			registeration();
 		}
 		else if (inp == 5) {
-			j.write();
+			leaderboard();
 		}
 		else if (inp == 6) {
+			j.write();
+		}
+		else if (inp == 7) {
 			return;
 		}
 		else {
@@ -233,4 +237,80 @@ void ui::registeration()
 
 
 
+}
+
+void ui::leaderboard()
+{
+	system("cls");
+	int inp;
+	cout << "1 : income by cinema " << endl;
+	cout << "2 : income by movie " << endl;
+	cout << "3 : most seller cinema  " << endl;
+	cout << "4 : most seller movie " << endl;
+	cout << "5 : most popular time of week  " << endl;
+
+
+	cin >> inp;
+
+
+	if (inp == 1) {
+		system("cls");
+		j.printall();
+		cout << endl;
+		cout << "enter cinema id :";
+		int cid;
+		cin >> cid;
+		cout<<"cinema income :  " << j.income(cid) << endl;
+		cout << "enter a number to return :";
+		cin >> inp;
+	}
+	else if (inp==2) {
+		system("cls");
+		j.allFilm();
+		cout << "enter movie name : ";
+		string name;
+		cin >> name;
+		system("cls");
+		cout << "1 : for all cinemas \n";
+		cout << "2 : search with id   \n";
+		cin >> inp;
+		if (inp == 1) {
+			cout << "movie income at all : " << j.film_income(name) << endl
+				<<"enter a number to continue :";
+			cin >> inp;
+			
+		}
+		else if (inp == 2) {
+			system("cls");
+			j.printall();
+			cout << "enter cinema id :";
+			int cid;
+			cin >> cid;
+			cout << "income for movie " << name << " : " << j.film_income(cid, name)<<endl
+				<< "enter a number to continue :";
+			cin >> inp;
+		}
+	}
+	else if(inp==3){
+		system("cls");
+		int mscId = j.most_seller();
+		cout << " most seller is " << j.getcinema(mscId).getname() << "\ntotal income : " << j.getcinema(mscId).income() << endl;
+		cout << "enter a number to continue :";
+		cin >> inp;
+
+
+	}
+	else if(inp == 4) {
+		system("cls");
+		cout << "most seller movie is : " << j.mostsellermovie() << endl;
+		cout << "total income :" << j.film_income(j.mostsellermovie())<<endl;
+		cout << "enter a number to continue :";
+		cin >> inp;
+	}
+	else if (inp == 5) {
+		system("cls");
+		j.popular();
+		cout << "enter a number to continue :";
+		cin >> inp;
+	}
 }
