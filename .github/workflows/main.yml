@@ -21,7 +21,7 @@ jobs:
           directory: ./ticket/
           github_token: ${{ secrets.GITHUB_TOKEN }}
           skip_check_run: false
-          exclude_lang: "JSON"
+          exclude_ext: "exe,vcxproj,filters"
           exclude_dir: ".github"
           
       - name: print output
