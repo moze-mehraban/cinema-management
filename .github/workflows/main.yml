@@ -1,0 +1,26 @@
+            - name: LOC Badge
+  # You may pin to the exact commit or the version.
+  # uses: DeathSy/GHA-LoC-Badge@b18d27f2d3f09aca4af95f83aba94cf055c5ba61
+  uses: DeathSy/GHA-LoC-Badge@1.0.3
+  with:
+    # The directory to scan.
+    directory: # optional, default is ./
+    # The output path to save the badge svg - including extension!
+    badge: # optional, default is ./badge.svg
+    # The file patterns to search for, separated by pipes ("|").
+    patterns: # optional, default is **
+    # The file patterns to ignore, even if they matched "patterns", separated by pipes ("|").
+    ignore: # optional, default is node_modules
+    # The label to use for the badge.
+    badge_label: # optional, default is Lines of Code
+    # The color to use for the badge.
+    badge_color: # optional, default is blue
+    # The body style to use for the badge. ('flat' or 'classic')
+    badge_style: # optional, default is classic
+    # The scale to resize this badge
+    badge_scale: # optional, default is 1
+    # The color to use for this badge label.
+    badge_labelcolor: # optional, default is 555
+    # Enable debug logging
+    debug: # optional, default is false
+          
