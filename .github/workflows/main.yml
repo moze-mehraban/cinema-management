@@ -19,7 +19,6 @@ jobs:
         uses: PavanMudigonda/lines-of-code-reporter@v1.5
         with:
           directory: ./
-          github_token: ${{ secrets.GITHUB_TOKEN }}
           skip_check_run: false
           exclude_lang: "JSON"
           exclude_dir: ".github"
@@ -29,7 +28,3 @@ jobs:
         run: | 
           Write-Host 'Total Lines of Code...:  ${{ steps.lines-of-code-reporter.outputs.total_lines }}'
           Write-Host 'Lines of Code Markdown Report Path...:  ${{ steps.lines-of-code-reporter.outputs.loc_report }}'
-
-      # Publish Lines of Code Summary  # Optional
-      - name: Add Lines of Code Summary
-        run: echo "${{ steps.loc.outputs.lines-of-code-summary }}" >> $GITHUB_STEP_SUMMARY
